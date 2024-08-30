@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+    maven {
+        url = 'https://oss.sonatype.org/content/repositories/snapshots/'
+    }
+    maven {
+        url = 'https://oss.sonatype.org/content/repositories/central/'
+    }
+    maven {
+        url 'https://repo.olziedev.com/'
+        name 'olzie-repo'
+    }
+}
+
+
+dependencies {
+    compileOnly 'org.spigotmc:spigot-api:1.20.1-R0.1-SNAPSHOT'
+    compileOnly 'com.olziedev:playerwarps-api:7.5.3'
+}
+
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    destinationDirectory = file("C:\\Users\\mnogo\\OneDrive\\Desktop\\Test Server\\plugins")
+    archiveFileName = project.name + ".jar"
+
+    manifest {
+        attributes(
+                'Main-Class': 'org.example.Main'
+        )
+    }
+}

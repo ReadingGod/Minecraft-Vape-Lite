@@ -1,0 +1,21 @@
+# If the plugin should be enabled
+enable: true
+
+# The type of the item
+item-type: "PAPER"
+
+# If the item should glow
+glowing: true
+
+# If the owner should be checked before issuing the ticket
+owner-check: true
+
+# The name of the item
+# Can use %shopName% placeholder and HEX colors
+item-name: "&#808DF1S&#6E95C3t&#5D9C94e&#4BA466v&#3AAB37e"
+
+# The lore of the item
+# Can use %shopName% placeholder and HEX colors
+item-lore:
+  - "&7Welcome to %shopName%"
+  - "&aBest deals in town!"

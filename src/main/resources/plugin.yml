@@ -1,0 +1,18 @@
+main: org.example.TicketCreator
+name: "UltrapixelTicketCreator"
+author: "Proto68"
+api-version: 1.21
+version: 1.0
+
+commands:
+  utc:
+    description: Base command for the UTC plugin.
+    usage: /<command> <subcommand>
+
+permissions:
+  utc.reload:
+    description: Allows the user to reload the UltrapixelTicketCreator configuration.
+    default: op
+  utc.create:
+    description: Allows the user to create tickets using the '/utc create' command.
+    default: op
