@@ -20,12 +20,16 @@ repositories {
         url 'https://repo.olziedev.com/'
         name 'olzie-repo'
     }
+    maven {
+        url 'https://jitpack.io'
+    }
 }
 
 
 dependencies {
     compileOnly 'org.spigotmc:spigot-api:1.20.1-R0.1-SNAPSHOT'
     compileOnly 'com.olziedev:playerwarps-api:7.5.3'
+    compileOnly 'com.github.MilkBowl:VaultAPI:1.7'
 }
 
 

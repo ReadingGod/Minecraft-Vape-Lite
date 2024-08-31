@@ -1,21 +1,110 @@
 # If the plugin should be enabled
 enable: true
 
-# The type of the item
-item-type: "PAPER"
-
-# If the item should glow
-glowing: true
-
 # If the owner should be checked before issuing the ticket
 owner-check: true
 
-# The name of the item
-# Can use %shopName% placeholder and HEX colors
-item-name: "&#808DF1S&#6E95C3t&#5D9C94e&#4BA466v&#3AAB37e"
+# The different tiers of tickets
+tiers:
+  1:
+    # Price of the ticket
+    price: 1000
 
-# The lore of the item
-# Can use %shopName% placeholder and HEX colors
-item-lore:
-  - "&7Welcome to %shopName%"
-  - "&aBest deals in town!"
+    # The name of the item
+    # Can use %shopName% placeholder and HEX colors
+    name: "Ticket (Tier I)"
+
+    # The type of the item
+    type: "PAPER"
+
+    # If the item should glow
+    glowing: true
+
+    # The lore of the item
+    # Can use %shopName% placeholder and HEX colors
+    lore:
+      - "Basic ticket to %warpName%"
+      - "Use it precisely!"
+
+  2:
+    # Price of the ticket
+    price: 2000
+
+    # The name of the item
+    # Can use %shopName% placeholder and HEX colors
+    name: "Ticket (Tier II)"
+
+    # The type of the item
+    type: "PAPER"
+
+    # If the item should glow
+    glowing: true
+
+    # The lore of the item
+    # Can use %shopName% placeholder and HEX colors
+    lore:
+      - "Common ticket to %warpName%"
+      - "Use it precisely!"
+  3:
+    # Price of the ticket
+    price: 3000
+
+    # The name of the item
+    # Can use %shopName% placeholder and HEX colors
+    name: "Ticket (Tier III)"
+
+    # The type of the item
+    type: "PAPER"
+
+    # If the item should glow
+    glowing: true
+
+    # The lore of the item
+    # Can use %shopName% placeholder and HEX colors
+    lore:
+      - "Rare ticket to %warpName%"
+      - "Use it precisely!"
+  4:
+    # Price of the ticket
+    price: 4000
+
+    # The name of the item
+    # Can use %shopName% placeholder and HEX colors
+    name: "Ticket (Tier IV)"
+
+    # The type of the item
+    type: "PAPER"
+
+    # If the item should glow
+    glowing: true
+
+    # The lore of the item
+    # Can use %shopName% placeholder and HEX colors
+    lore:
+      - "Epic ticket to %warpName%"
+      - "Use it precisely!"
+  5:
+    # Price of the ticket
+    price: 5000
+
+    # The name of the item
+    # Can use %shopName% placeholder and HEX colors
+    name: "Ticket (Tier V)"
+
+    # The type of the item
+    type: "PAPER"
+
+    # If the item should glow
+    glowing: true
+
+    # The lore of the item
+    # Can use %shopName% placeholder and HEX colors
+    lore:
+      - "Legendary ticket to %warpName%"
+      - "Use it precisely!"
+
+messages:
+  prefix: "&6&lTickets"
+  insufficient-balance: "&2You need %price% to buy these tickets, but you have %balance%!"
+  not-owner: "&4You are not the owner of this warp!"
+  successful-purchase: "&aYou successfully purchased %quantity% Tier (%tier%) ticket/s for %warpName% for $%price%!"
