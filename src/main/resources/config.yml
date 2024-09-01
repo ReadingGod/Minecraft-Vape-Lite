@@ -105,6 +105,10 @@ tiers:
 
 messages:
   prefix: "&6&lTickets"
+
+  # Available placeholders:
+  # %warpName%, %price%, %quantity%, %tier% (I, II, III...), %balance%
   insufficient-balance: "&2You need %price% to buy these tickets, but you have %balance%!"
   not-owner: "&4You are not the owner of this warp!"
+  not-enough-space: "&c&lYou need more space in the inventory!"
   successful-purchase: "&aYou successfully purchased %quantity% Tier (%tier%) ticket/s for %warpName% for $%price%!"

@@ -54,8 +54,28 @@ public class BuyTicket implements CommandExecutor {
         double playerBalance = TicketCreator.econ.getBalance(player);
 
 
+
         PlayerWarpsAPI.getInstance(api -> {
             boolean isOwnerOfWarp;
+
+            Map<String, String> map = new HashMap<>();
+            map.put("warpName", warpName);
+            map.put("quantity", Integer.toString(quantity));
+            map.put("balance", Double.toString(playerBalance));
+
+            String tierIcon = switch (tier) {
+                default -> "I";
+                case 2 -> "II";
+                case 3 -> "III";
+                case 4 -> "IV";
+                case 5 -> "V";
+            };
+
+            map.put("tier", tierIcon);
+
+            double price = Double.parseDouble(UsefulMethods.readConfig("tiers." + tier + ".price")) * quantity;
+
+            map.put("price", Double.toString(price));
 
             if (Objects.equals(UsefulMethods.readConfig("owner-check"), "true")){
                 Warp warp = api.getPlayerWarp(warpName, sender);
@@ -67,36 +87,24 @@ public class BuyTicket implements CommandExecutor {
                 isOwnerOfWarp = Objects.equals(uuid.toString(), ownerUUID.toString());
 
                 if (!isOwnerOfWarp){
-                    player.sendMessage(ColorUtil.translateHexColorCodes(UsefulMethods.getMessage("not-owner")));
+                    UsefulMethods.sendMessage(player, map, "not-owner");
                     return;
                 }
             }
 
-            double price = Double.parseDouble(UsefulMethods.readConfig("tiers." + tier + ".price")) * quantity;
             if (playerBalance < price){
-                String message = UsefulMethods.getMessage("insufficient-balance");
-
-                Map<String, String> map = new HashMap<>();
-                map.put("price", Double.toString(price));
-                map.put("balance", Double.toString(playerBalance));
-
-                message = UsefulMethods.replacePlaceholders(message, map);
-
-                player.sendMessage(ColorUtil.translateHexColorCodes(message));
+                UsefulMethods.sendMessage(player, map, "insufficient-balance");
                 return;
             }
-
-            TicketCreator.econ.withdrawPlayer(player, price);
 
             // Retrieve the item name and lore from the config
             String itemName = UsefulMethods.readConfig("tiers." + tier + ".name");
             List<String> itemLore = plugin.getConfig().getStringList("tiers." + tier + ".lore");
 
-            // Replace %shopName% in the item name and lore
-            itemName = itemName.replace("%warpName%", warpName);
-           List<String> finalLore = new ArrayList<>();
+            itemName = UsefulMethods.replacePlaceholders(itemName, map);
+            List<String> finalLore = new ArrayList<>();
             for (String line : itemLore) {
-                finalLore.add(ColorUtil.translateHexColorCodes(line.replace("%warpName%", warpName)));
+                finalLore.add(ColorUtil.translateHexColorCodes(UsefulMethods.replacePlaceholders(line, map)));
             }
 
             // Create the item
@@ -116,29 +124,16 @@ public class BuyTicket implements CommandExecutor {
 
             item.setAmount(quantity);
 
+            if (UsefulMethods.hasEnoughSpace(player, item)){
+                TicketCreator.econ.withdrawPlayer(player, price);
 
-            // Give the item to the player
-            player.getInventory().addItem(item);
+                // Give the item to the player
+                player.getInventory().addItem(item);
 
-            String message = UsefulMethods.getMessage("successful-purchase");
-
-            String tierIcon = switch (tier) {
-                default -> "I";
-                case 2 -> "II";
-                case 3 -> "III";
-                case 4 -> "IV";
-                case 5 -> "V";
-            };
-
-            Map<String, String> map = new HashMap<>();
-            map.put("tier", tierIcon);
-            map.put("warpName", warpName);
-            map.put("quantity", Integer.toString(quantity));
-            map.put("price", Double.toString(price));
-
-            message = UsefulMethods.replacePlaceholders(message, map);
-
-            player.sendMessage(ColorUtil.translateHexColorCodes(message));
+                UsefulMethods.sendMessage(player, map, "successful-purchase");
+            } else {
+                UsefulMethods.sendMessage(player, map, "not-enough-space");
+            }
         });
         return true;
     }

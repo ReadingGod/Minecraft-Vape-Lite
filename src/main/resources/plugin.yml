@@ -2,7 +2,7 @@ main: org.example.TicketCreator
 name: "UltrapixelTicketCreator"
 author: "Proto68"
 api-version: 1.21
-version: 1.0
+version: 2.0.1
 depend: [Vault, CMI]
 
 commands:
