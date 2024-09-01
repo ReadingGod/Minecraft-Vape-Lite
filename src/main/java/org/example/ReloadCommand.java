@@ -16,7 +16,7 @@ public class ReloadCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         // Checking the sender for required permission
-        if (sender.hasPermission("utc.reload")) {
+        if (sender.hasPermission("tickets.reload")) {
 
             // Getting the time before the reload
             long before = System.currentTimeMillis();

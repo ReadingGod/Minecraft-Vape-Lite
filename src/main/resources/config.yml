@@ -105,6 +105,7 @@ tiers:
 
 messages:
   prefix: "&6&lTickets"
+  usage: "&cUsage: /tickets buy <tier> <warp> <quantity?>"
 
   # Available placeholders:
   # %warpName%, %price%, %quantity%, %tier% (I, II, III...), %balance%
@@ -112,3 +113,5 @@ messages:
   not-owner: "&4You are not the owner of this warp!"
   not-enough-space: "&c&lYou need more space in the inventory!"
   successful-purchase: "&aYou successfully purchased %quantity% Tier (%tier%) ticket/s for %warpName% for $%price%!"
+  # Here the only placeholder is %tier%
+  no-tier-permission: "&c&lYou don't have permission to purchase Tier %tier% tickets!"

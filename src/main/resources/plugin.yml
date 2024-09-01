@@ -2,7 +2,7 @@ main: org.example.TicketCreator
 name: "UltrapixelTicketCreator"
 author: "Proto68"
 api-version: 1.21
-version: 2.0.1
+version: 2.0.2
 depend: [Vault, CMI]
 
 commands:
@@ -17,3 +17,18 @@ permissions:
   tickets.buy:
     description: Allows the user to buy tickets using the '/tickets buy' command.
     default: true
+  tickets.tier.1:
+    description: Allows the player to buy tier I tickets
+    default: false
+  tickets.tier.2:
+    description: Allows the player to buy tier II tickets
+    default: false
+  tickets.tier.3:
+    description: Allows the player to buy tier III tickets
+    default: false
+  tickets.tier.4:
+    description: Allows the player to buy tier IV tickets
+    default: false
+  tickets.tier.5:
+    description: Allows the player to buy tier V tickets
+    default: false

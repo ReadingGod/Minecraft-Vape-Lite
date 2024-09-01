@@ -33,7 +33,8 @@ public class BuyTicket implements CommandExecutor {
         int quantity;
 
         if (args.length < 3) {
-            player.sendMessage(ChatColor.RED + "Usage: /tickets buy <tier> <warp> <quantity?>");
+            String message = UsefulMethods.getMessage("usage");
+            player.sendMessage(ColorUtil.translateHexColorCodes(message));
             return true;
         } else if (args.length == 4) {
             quantity = Integer.parseInt(args[3]);
@@ -48,6 +49,14 @@ public class BuyTicket implements CommandExecutor {
             case "IV" -> 4;
             case "V" -> 5;
         };
+
+        if (!(player.hasPermission("tickets.tier.5") || (player.hasPermission("tickets.tier.4") && tier <= 4) || (player.hasPermission("tickets.tier.3") && tier <= 3) || (player.hasPermission("tickets.tier.2") && tier <= 2) || (player.hasPermission("tickets.tier.1") && tier == 1))){
+            Map<String, String> map = new HashMap<>();
+            map.put("tier", args[1]);
+
+            UsefulMethods.sendMessage(player, map, "no-tier-permission");
+            return true;
+        }
 
         String warpName = args[2];
 

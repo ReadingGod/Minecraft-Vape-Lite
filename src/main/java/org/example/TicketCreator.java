@@ -61,7 +61,8 @@ public class TicketCreator extends JavaPlugin {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (command.getName().equalsIgnoreCase("tickets")) {
             if (args.length == 0) {
-                sender.sendMessage("Usage: /tickets <subcommand>");
+                String message = UsefulMethods.getMessage("usage");
+                sender.sendMessage(ColorUtil.translateHexColorCodes(message));
                 return true;
             }
 

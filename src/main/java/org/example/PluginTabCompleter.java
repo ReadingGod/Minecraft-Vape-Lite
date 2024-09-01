@@ -31,11 +31,21 @@ public class PluginTabCompleter implements TabCompleter {
                 }
             } else if (args.length == 2 && args[0].equalsIgnoreCase("buy")) {
                 if (sender.hasPermission("tickets.buy")) {
-                    suggestions.add("I");
-                    suggestions.add("II");
-                    suggestions.add("III");
-                    suggestions.add("IV");
-                    suggestions.add("V");
+                    boolean tier1 = sender.hasPermission("tickets.tier.1");
+                    boolean tier2 = sender.hasPermission("tickets.tier.2");
+                    boolean tier3 = sender.hasPermission("tickets.tier.3");
+                    boolean tier4 = sender.hasPermission("tickets.tier.4");
+                    boolean tier5 = sender.hasPermission("tickets.tier.5");
+                    if (tier1 || tier2 || tier3 || tier4 || tier5)
+                        suggestions.add("I");
+                    if (tier2 || tier3 || tier4 || tier5)
+                        suggestions.add("II");
+                    if (tier3 || tier4 || tier5)
+                        suggestions.add("III");
+                    if (tier4 || tier5)
+                        suggestions.add("IV");
+                    if (tier5)
+                        suggestions.add("V");
                 }
             } else if (args.length == 3 && args[0].equalsIgnoreCase("buy")) {
                 if (sender.hasPermission("tickets.buy")) {
